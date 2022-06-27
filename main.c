@@ -2,7 +2,7 @@
 #include <semaphore.h>
 #include <stdio.h>
 #include <unistd.h>
-#define h 20000000 //corresponde al tiempo maximo que esperara un avion para solicitar la pista
+#define h 200000000000 //corresponde al tiempo maximo que esperara un avion para solicitar la pista
 #define NR_LOOP 32000000 //corresponde a la cantidad de iteraciones a realizar cada avion para verificar si debe solicitar la pista o no.
 //#define aterrizajes 0
 
