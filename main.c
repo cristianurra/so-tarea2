@@ -1,8 +1,11 @@
 #include <pthread.h>
 #include <semaphore.h>
 #include <stdio.h>
-
+#define h 2000
+#define k 2000
 #define NR_LOOP 100
+//#define aterrizajes 0
+
 static void * avion1(void* arg);
 static void * avion2(void* arg);
 static void * avion3(void* arg);
@@ -14,18 +17,16 @@ static void * avion8(void* arg);
 static void * avion9(void* arg);
 static void * avion10(void* arg);
 
-static int aterrizajes = 0;		//cantidad de aterrizajes totales
 
+int aterrizajes = 0;		//contador cantidad de aterrizajes totales
 sem_t aeropuerto;
-int k;
-int h;
-h=2000;
-k=20000; //para el rango de teimpo de llegada
- 
-#include "aterrizajes.h" 
-int main(void)
-{
 
+ #include "aterrizajes.h"
+int main(void)
+{	
+	
+	int n;
+	n=56; //cantidad de aviones a simular
 	srand(time(0));
 	pthread_t thread_1,thread_2,thread_3,thread_4,thread_5,thread_6,thread_7,thread_8,thread_9,thread_10;
 	sem_init(&aeropuerto, 0, 1);
@@ -55,6 +56,7 @@ int main(void)
 	pthread_join(thread_8,NULL);
 	pthread_join(thread_9,NULL);
 	pthread_join(thread_10,NULL);
+	//pthread_join(thread_11,NULL);
 	
 	printf("Valor %d\n",aterrizajes);
 	return 0;
