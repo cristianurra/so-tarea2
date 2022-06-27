@@ -9,7 +9,7 @@
 #include "static.h"
 
 
-int aterrizajes = 0;		//contador cantidad de aterrizajes totales
+int aterrizajes = 0;		//contador cantidad de aterrizajes totales que se han realizado
 sem_t aeropuerto;
 
  #include "aterrizajes.h"
@@ -20,17 +20,17 @@ int main(void)
 	printf("Indique la cantidad de aviones a simular (entre 1 y 2500:  ");
 	scanf("%d",&n); //cantidad de aviones a simular
 	printf("%d\n",n);
-	srand(time(0));
+	srand(time(0));			//para generar numeros aleatorios a partir de una semilla
 	
 
 	#include "pthread_t.h"
 	
 	sem_init(&aeropuerto, 0, 1);
 	int ii=0;
-	#include "pthread_create.h"
+	#include "pthread_create.h"			//aca se encuentra la implementacion de cada hilo
 
 	int iii=0;
-	#include "pthread_join.h"
+	#include "pthread_join.h"			//aca se incluyen la ejecucion de cada thread_join
 
 
 	
